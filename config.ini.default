@@ -1,0 +1,25 @@
+# Settings for a multi-room skill.
+#
+# The smallest possible configuration looks like this:
+#   [DEFAULT]
+#
+# For a multi-room setup, list each room in it's own section.
+#
+# Settings in the [DEFAULT] section apply to all rooms,
+# unless overridden in room sections.
+# 
+# For rooms with a Snips audio server, add a 'site_id' setting
+# with the ID of the Snips audio server
+# as given in the 'bind' setting in /etc/snips.toml.
+# This is used to infer the room if omitted.
+#
+# Rooms with no Snips devices should not have a 'site_id'.
+
+[DEFAULT]
+dim_step = 50
+base_topic = zigbee2mqtt
+
+[ExampleRoom]
+site_id = bedroom
+device = LightBulb
+capabilities = brightness, color
